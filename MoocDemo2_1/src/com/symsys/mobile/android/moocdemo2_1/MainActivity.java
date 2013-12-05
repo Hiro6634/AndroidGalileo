@@ -1,0 +1,60 @@
+package com.symsys.mobile.android.moocdemo2_1;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import com.symsys.mobile.android.moocdemo2_1.R;
+
+
+
+import android.os.Bundle;
+import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
+import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+public class MainActivity extends FragmentActivity 
+				implements OnItemClickListener{
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
+		String[] arrayCountries = new String[] {
+				"Brasil", "México", "Colombia",
+				"Argentina", "Perú", "Venezuela",
+				"Chile", "Ecuador", "Guatemala", "Cuba"
+		};
+		
+		ArrayList<String> countries = new ArrayList<String>(Arrays.asList(arrayCountries));
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, 	
+																android.R.layout.simple_list_item_1,
+																countries
+																);
+		ListView list = (ListView)findViewById(R.id.listview);
+		list.setAdapter(adapter);
+		list.setOnItemClickListener(this);
+	} 
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> adapterView, View view, 
+			int position, long arg3) {
+		String country = adapterView.getItemAtPosition(position).toString();
+		Intent intent = new Intent(this, CountryDetailActivity.class);
+		intent.putExtra(CountryDetailActivity.COUNTRY, country);
+		startActivity(intent);
+	}
+
+}
