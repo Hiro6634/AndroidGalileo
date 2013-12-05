@@ -3,13 +3,16 @@ package com.suyama.hiro.mall_k.activities;
 import java.util.HashMap;
 
 import com.suyama.hiro.mall_k.R;
-import com.suyama.hiro.mall_k.Shops;
+import com.suyama.hiro.mall_k.data.Shops;
+import com.suyama.hiro.mall_k.fragments.CommentsFragment;
 
 
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.text.util.Linkify;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,6 +22,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+//public class ShopDetailActivity extends FragmentActivity {
 public class ShopDetailActivity extends Activity {
 
 	private TextView				nameTextView;
@@ -49,6 +53,11 @@ public class ShopDetailActivity extends Activity {
 		callButton			= (Button)findViewById(R.id.activity_shop_detail_callButton);
 		imageButton			= (ImageButton)findViewById(R.id.activity_shop_detail_imageButton);
 
+//		FragmentManager manager = getSupportFragmentManager();
+		
+//		CommentsFragment fragment = (CommentsFragment)manager.findFragmentById(R.id.activity_shop_detail_fragmentComments);
+		
+		
 		// Recuperamos los datos adjuntos al intent. 
 		Intent intent = getIntent();
 		shopInfo = (HashMap<String, String>)intent.getSerializableExtra("map");

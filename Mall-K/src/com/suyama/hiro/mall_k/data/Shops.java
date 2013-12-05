@@ -1,7 +1,9 @@
-package com.suyama.hiro.mall_k;
+package com.suyama.hiro.mall_k.data;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import com.suyama.hiro.mall_k.R;
 
 public class Shops {
 	public final static String NAME 		= "Shop.NAME";

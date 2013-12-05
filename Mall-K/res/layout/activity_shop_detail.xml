@@ -73,4 +73,11 @@
         android:layout_marginBottom="20dp"
         android:text="@string/call_button" />
 
+<!-- <fragment
+        android:id="@+id/activity_shop_detail_fragmentComments"
+        android:name="com.suyama.hiro.mall_k.fragments.CommentsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/fragment_comments" />
+ -->        
 </LinearLayout>

@@ -1,9 +1,10 @@
-package com.suyama.hiro.mall_k;
+package com.suyama.hiro.mall_k.activities;
 
 import java.util.HashMap;
 
 import com.suyama.hiro.mall_k.R;
-import com.suyama.hiro.mall_k.activities.ShopDetailActivity;
+import com.suyama.hiro.mall_k.R.layout;
+import com.suyama.hiro.mall_k.data.Shops;
 
 import android.os.Bundle;
 import android.app.ListActivity;
@@ -21,7 +22,6 @@ public class MainActivity extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-//		shops = new ArrayList<HashMap<String,String>>();
 		shops = new Shops();
 
 		// Creamos el adapter para el ActivityView
@@ -43,21 +43,14 @@ public class MainActivity extends ListActivity {
 	}*/
 
 	@Override
-	protected void onListItemClick(ListView l, View v, int position, long id) {
-		TextView text1 = (TextView)v.findViewById(android.R.id.text1);
-		
-		// Buscamos la tienda en la lista para obtener sus datos y enviarlos a la otra actividad.
-		for( HashMap<String, String> elemento: shops.getList()) {
-			if( elemento.get(Shops.NAME).equals(text1.getText().toString()))
-			{
-				// Lanzamos la actividad con los detalles de la tienda.
-				Intent intent = new Intent( getApplicationContext(), ShopDetailActivity.class );	
-				intent.putExtra("map", elemento);
-				startActivity(intent);
-				break;
-			}
-		}
-		
-		super.onListItemClick(l, v, position, id);
+	protected void onListItemClick(ListView listView, View view, int position, long id) {
+		HashMap<String, String> elemento = (HashMap<String, String>)listView.getAdapter().getItem(position);
+
+		// Lanzamos la actividad con los detalles de la tienda.
+		Intent intent = new Intent( getApplicationContext(), ShopDetailActivity.class );	
+		intent.putExtra("map", elemento);
+		startActivity(intent);
+
+		super.onListItemClick(listView, view, position, id);
 	}
 }

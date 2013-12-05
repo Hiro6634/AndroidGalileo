@@ -11,4 +11,7 @@
     <string name="call_button">LLAMAR</string>
     <string name="title_activity_show_image">Galería de Imágenes</string>
 	<string name="activity_show_image_description">Foto</string>
+	<string name="fragment_comments_msg_icon">Icono</string>
+	<string name="fragment_comments_button_icon">Icono Send</string>
+			
 </resources>

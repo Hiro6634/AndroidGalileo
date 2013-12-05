@@ -4,7 +4,7 @@ package com.suyama.hiro.mall_k.activities;
 
 
 import com.suyama.hiro.mall_k.R;
-import com.suyama.hiro.mall_k.Shops;
+import com.suyama.hiro.mall_k.data.Shops;
 
 import android.net.Uri;
 import android.os.Bundle;
