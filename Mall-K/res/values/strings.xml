@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Mall-K</string>
+    <string name="action_share">Compartir</string>
+    <string name="action_favorite">Favorito</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="activity_shops_list_title">Lista de Tiendas</string>
+    <string name="title_activity_shop_detail">Datos de la Tienda</string>
+    <string name="schedule_title">Horarios:</string>
+    <string name="call_button">LLAMAR</string>
+    <string name="title_activity_show_image">Galería de Imágenes</string>
+	<string name="activity_show_image_description">Foto</string>
+</resources>
