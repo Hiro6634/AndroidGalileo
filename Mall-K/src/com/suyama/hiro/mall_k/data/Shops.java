@@ -17,9 +17,11 @@ public class Shops {
 	public final static String WEBSITE		= "Shop.WEBSITE";
 	
 	private ArrayList<HashMap<String, String>>	list;
+	private HashMap<String, String[]>			comments;
 	
 	public Shops(){
-		list = new ArrayList<HashMap<String, String>>();
+		list 		= new ArrayList<HashMap<String, String>>();
+		comments 	= new HashMap<String, String[]>();
 		
 		HashMap<String, String> element;
 		
@@ -36,6 +38,7 @@ public class Shops {
 		element.put(Shops.IMAGECOMMENT,	"Imagen de la Tienda");
 		
 		list.add(element);
+		comments.put(element.get(Shops.NAME), new String[]{});
 
 	
 		element = new HashMap<String, String>();
@@ -50,6 +53,7 @@ public class Shops {
 		element.put(Shops.IMAGECOMMENT,	"Imagen de la Tienda");
 		
 		list.add(element);
+		comments.put(element.get(Shops.NAME), new String[]{});
 		
 		element = new HashMap<String, String>();
 		element.put(Shops.NAME, 			"La Fabrica");
@@ -63,6 +67,7 @@ public class Shops {
 		element.put(Shops.IMAGECOMMENT,	"Imagen de la Tienda");
 		
 		list.add(element);
+		comments.put(element.get(Shops.NAME), new String[]{});
 
 		element = new HashMap<String, String>();
 		element.put(Shops.NAME, 			"Libreria del Colegio");
@@ -76,6 +81,7 @@ public class Shops {
 		element.put(Shops.IMAGECOMMENT,	"Imagen de la Tienda");
 		
 		list.add(element);
+		comments.put(element.get(Shops.NAME), new String[]{});
 		
 		element = new HashMap<String, String>();
 		element.put(Shops.NAME, 			"Los Amores");
@@ -89,6 +95,7 @@ public class Shops {
 		element.put(Shops.IMAGECOMMENT,	"Imagen de la Tienda");
 		
 		list.add(element);
+		comments.put(element.get(Shops.NAME), new String[]{});
 
 		element = new HashMap<String, String>();
 		element.put(Shops.NAME, 			"Hispamar");
@@ -102,9 +109,14 @@ public class Shops {
 		element.put(Shops.IMAGECOMMENT,	"Imagen de la Tienda");
 		
 		list.add(element);
+		comments.put(element.get(Shops.NAME), new String[]{});
 	}
 
 	public ArrayList<HashMap<String, String>> getList() {
 		return list;
+	}
+	
+	public String[] getComments(String name) {
+		return comments.get(name);
 	}
 }

@@ -22,8 +22,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-//public class ShopDetailActivity extends FragmentActivity {
-public class ShopDetailActivity extends Activity {
+public class ShopDetailActivity extends FragmentActivity {
+//public class ShopDetailActivity extends Activity {
 
 	private TextView				nameTextView;
 	private TextView				descriptionTextView;
@@ -35,7 +35,7 @@ public class ShopDetailActivity extends Activity {
 	private Button					callButton;
 	private ImageButton				imageButton;
 	private HashMap<String, String> shopInfo;
-
+	private String[] 				arrayComments;
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,14 +53,14 @@ public class ShopDetailActivity extends Activity {
 		callButton			= (Button)findViewById(R.id.activity_shop_detail_callButton);
 		imageButton			= (ImageButton)findViewById(R.id.activity_shop_detail_imageButton);
 
-//		FragmentManager manager = getSupportFragmentManager();
-		
-//		CommentsFragment fragment = (CommentsFragment)manager.findFragmentById(R.id.activity_shop_detail_fragmentComments);
-		
+		FragmentManager manager = getSupportFragmentManager();
+		CommentsFragment fragment = (CommentsFragment)manager.findFragmentById(R.id.activity_shop_detail_fragmentComments);
 		
 		// Recuperamos los datos adjuntos al intent. 
 		Intent intent = getIntent();
 		shopInfo = (HashMap<String, String>)intent.getSerializableExtra("map");
+		arrayComments = (String[])intent.getSerializableExtra("comments");
+		fragment.setComments(arrayComments);
 		
 		// Cargamos los datos variables en el Layout
 		nameTextView.setText(shopInfo.get(Shops.NAME));

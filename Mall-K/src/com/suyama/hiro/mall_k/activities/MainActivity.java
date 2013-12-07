@@ -45,10 +45,12 @@ public class MainActivity extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView listView, View view, int position, long id) {
 		HashMap<String, String> elemento = (HashMap<String, String>)listView.getAdapter().getItem(position);
-
+		String[]				comments = shops.getComments(elemento.get(Shops.NAME));
+		
 		// Lanzamos la actividad con los detalles de la tienda.
 		Intent intent = new Intent( getApplicationContext(), ShopDetailActivity.class );	
 		intent.putExtra("map", elemento);
+		intent.putExtra("comments", comments);
 		startActivity(intent);
 
 		super.onListItemClick(listView, view, position, id);
