@@ -2,6 +2,7 @@ package com.suyama.hiro.mall_k.data;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import com.suyama.hiro.mall_k.R;
 
@@ -15,30 +16,34 @@ public class Shops {
 	public final static String SCHEDULE		= "Shop.SCHEDULE";
 	public final static String EMAIL		= "Shop.EMAIL";
 	public final static String WEBSITE		= "Shop.WEBSITE";
+	public final static String COMMENT		= "Shop.COMMENT";
 	
-	private ArrayList<HashMap<String, String>>	list;
-	private HashMap<String, String[]>			comments;
+	private List<HashMap<String, String>>		list;
+//	private HashMap<String, String[]>			comments;
+	private HashMap<String,List<HashMap<String, String>>>	comments;
 	
 	public Shops(){
 		list 		= new ArrayList<HashMap<String, String>>();
-		comments 	= new HashMap<String, String[]>();
+//		comments 	= new HashMap<String, String[]>();
+		comments	= new HashMap<String, List<HashMap<String, String>>>();
 		
 		HashMap<String, String> element;
 		
 		// Cargamos los elementos de la lista hardcoded
 		element = new HashMap<String, String>();
-		element.put(Shops.NAME, 			"La Herradura");
+		element.put(Shops.NAME, 		"La Herradura");
 		element.put(Shops.DESCRIPTION, 	"Minimercado");
 		element.put(Shops.ADDRESS, 		"Diagonal Brown 11");
 		element.put(Shops.PHONE, 		"1142931122");
 		element.put(Shops.WEBSITE,		"www.laherradura.com.ar");
-		element.put(Shops.EMAIL,			"info@laherradura.com.ar");
-		element.put(Shops.SCHEDULE, 		"8:00 a 12:00\n13:00 a 21:00");
-		element.put(Shops.IMAGE,			String.valueOf(R.drawable.laherradura));
+		element.put(Shops.EMAIL,		"info@laherradura.com.ar");
+		element.put(Shops.SCHEDULE, 	"8:00 a 12:00\n13:00 a 21:00");
+		element.put(Shops.IMAGE,		String.valueOf(R.drawable.laherradura));
 		element.put(Shops.IMAGECOMMENT,	"Imagen de la Tienda");
 		
 		list.add(element);
-		comments.put(element.get(Shops.NAME), new String[]{});
+		//comments.put(element.get(Shops.NAME), new String[]{});
+		comments.put(element.get(Shops.NAME), new ArrayList<HashMap<String, String>>());
 
 	
 		element = new HashMap<String, String>();
@@ -53,7 +58,8 @@ public class Shops {
 		element.put(Shops.IMAGECOMMENT,	"Imagen de la Tienda");
 		
 		list.add(element);
-		comments.put(element.get(Shops.NAME), new String[]{});
+		//comments.put(element.get(Shops.NAME), new String[]{});
+		comments.put(element.get(Shops.NAME), new ArrayList<HashMap<String, String>>());
 		
 		element = new HashMap<String, String>();
 		element.put(Shops.NAME, 			"La Fabrica");
@@ -67,7 +73,8 @@ public class Shops {
 		element.put(Shops.IMAGECOMMENT,	"Imagen de la Tienda");
 		
 		list.add(element);
-		comments.put(element.get(Shops.NAME), new String[]{});
+		//comments.put(element.get(Shops.NAME), new String[]{});
+		comments.put(element.get(Shops.NAME), new ArrayList<HashMap<String, String>>());
 
 		element = new HashMap<String, String>();
 		element.put(Shops.NAME, 			"Libreria del Colegio");
@@ -81,7 +88,8 @@ public class Shops {
 		element.put(Shops.IMAGECOMMENT,	"Imagen de la Tienda");
 		
 		list.add(element);
-		comments.put(element.get(Shops.NAME), new String[]{});
+		//comments.put(element.get(Shops.NAME), new String[]{});
+		comments.put(element.get(Shops.NAME), new ArrayList<HashMap<String, String>>());
 		
 		element = new HashMap<String, String>();
 		element.put(Shops.NAME, 			"Los Amores");
@@ -95,7 +103,8 @@ public class Shops {
 		element.put(Shops.IMAGECOMMENT,	"Imagen de la Tienda");
 		
 		list.add(element);
-		comments.put(element.get(Shops.NAME), new String[]{});
+		//comments.put(element.get(Shops.NAME), new String[]{});
+		comments.put(element.get(Shops.NAME), new ArrayList<HashMap<String, String>>());
 
 		element = new HashMap<String, String>();
 		element.put(Shops.NAME, 			"Hispamar");
@@ -109,14 +118,19 @@ public class Shops {
 		element.put(Shops.IMAGECOMMENT,	"Imagen de la Tienda");
 		
 		list.add(element);
-		comments.put(element.get(Shops.NAME), new String[]{});
+		//comments.put(element.get(Shops.NAME), new String[]{});
+		comments.put(element.get(Shops.NAME), new ArrayList<HashMap<String, String>>());
 	}
 
-	public ArrayList<HashMap<String, String>> getList() {
+	public List<HashMap<String, String>> getList() {
 		return list;
 	}
 	
-	public String[] getComments(String name) {
+/*	public String[] getComments(String name) {
+		return comments.get(name);
+	}*/
+
+	public List<HashMap<String, String>> getComments(String name) {
 		return comments.get(name);
 	}
 }

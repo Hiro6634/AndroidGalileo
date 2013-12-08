@@ -1,6 +1,7 @@
 package com.suyama.hiro.mall_k.activities;
 
 import java.util.HashMap;
+import java.util.List;
 
 import com.suyama.hiro.mall_k.R;
 import com.suyama.hiro.mall_k.R.layout;
@@ -45,7 +46,7 @@ public class MainActivity extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView listView, View view, int position, long id) {
 		HashMap<String, String> elemento = (HashMap<String, String>)listView.getAdapter().getItem(position);
-		String[]				comments = shops.getComments(elemento.get(Shops.NAME));
+		List<HashMap<String, String>>		comments = shops.getComments(elemento.get(Shops.NAME));
 		
 		// Lanzamos la actividad con los detalles de la tienda.
 		Intent intent = new Intent( getApplicationContext(), ShopDetailActivity.class );	
