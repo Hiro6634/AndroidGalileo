@@ -16,22 +16,23 @@ import android.widget.ListView;
 public class CommentsFragment extends Fragment {
 	private ListView commentsList;
 	private String[] arrayComments;
+	private View view;
 	
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
+
+		ArrayList<String> comments = new ArrayList<String>(Arrays.asList(arrayComments));
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,comments);
+		commentsList.setAdapter(adapter);
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_comments, container, false);
-		
-		ArrayList<String> comments = new ArrayList<String>(Arrays.asList(arrayComments));
-		
+		view = inflater.inflate(R.layout.fragment_comments, container, false);
 		commentsList = (ListView)view.findViewById(R.id.fragment_comments_listView);
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,comments);
-		commentsList.setAdapter(adapter);
+		
 		return view;
 	}
 
