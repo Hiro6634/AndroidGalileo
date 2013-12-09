@@ -1,0 +1,21 @@
+package com.suyama.hiro.mall_k.data;
+
+import java.util.HashMap;
+
+public class ShopComments {
+	HashMap<String, String[]> comments = new HashMap<String, String[]>();
+	
+	public void newShop(String name ){
+		
+		comments.put(name, new String[]{});
+	}
+	public String[] getComments( String name ) {
+
+		if( comments.containsKey(name)) {
+			return comments.get(name);
+		}
+		
+		return null;
+	}
+}
+

@@ -1,0 +1,3 @@
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>Hay que ver como se pasa en el intent el List&lt;HashMap&lt;String, String&gt;&gt;&\#x0A;para el adapter</message>\r\n<message>Con el fragment de comentarios implelentado y sin errores. Falta caturar&\#x0A;el evento del boton Add t mostrar el nuevo comentario</message>\r\n<message>Incluido el fragmento</message>\r\n</messages>
+eclipse.preferences.version=1
+show_initial_config_dialog=false
